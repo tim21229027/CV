@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base: '/CV/', // 设置为仓库名
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
