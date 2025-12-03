@@ -35,26 +35,24 @@
           <li class="nav-item">
             <router-link
               class="nav-link mainFontColor navFont"
-              to="#Autobiography"
+              to="#Portfolio"
               style="text-align: center"
-              >簡歷</router-link
+              >作品集</router-link
             >
           </li>
           <li class="nav-item">
             <router-link
               class="nav-link mainFontColor navFont"
-              to="#Portfolio"
+              to="#Autobiography"
               style="text-align: center"
-              >作品集</router-link
+              >簡歷</router-link
             >
           </li>
         </ul>
       </div>
     </nav>
 
-    <Transition>
-      <RouterView ref="childComponent" />
-    </Transition>
+    <RouterView ref="childComponent" />
   </div>
 </template>
 

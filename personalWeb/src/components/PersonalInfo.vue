@@ -2,7 +2,7 @@
   <div id="PersonalInfo" class="PersonalInfoBody">
     <div class="personalInfoHeader">
       <div class="personalInfoNameText personalUn">
-        中原大學-資訊管理系-學士畢業
+        中原大學-資訊管理系-碩士畢業
       </div>
       <div class="personalInfoHeaderLeft">
         <div class="personalInfoPhoto">
@@ -105,19 +105,7 @@ export default {
               markColor: " background-color: #528E81;",
             },
             {
-              basicMainInfo: "MySQL",
-              markColor: " background-color: #528E81;",
-            },
-            {
               basicMainInfo: "Vue",
-              markColor: " background-color: #528E81;",
-            },
-            {
-              basicMainInfo: "MongoDB",
-              markColor: " background-color: #528E81;",
-            },
-            {
-              basicMainInfo: "FireBase",
               markColor: " background-color: #528E81;",
             },
           ],
@@ -138,10 +126,6 @@ export default {
               markColor: " background-color: #6A52C2;",
             },
             {
-              basicMainInfo: "webSocket",
-              markColor: " background-color: #6A52C2;",
-            },
-            {
               basicMainInfo: "視訊及聊天室",
               markColor: " background-color: #6A52C2;",
             },
@@ -155,10 +139,6 @@ export default {
             },
             {
               basicMainInfo: "JSP網頁開發",
-              markColor: " background-color: #6A52C2;",
-            },
-            {
-              basicMainInfo: "indexDB",
               markColor: " background-color: #6A52C2;",
             },
             {

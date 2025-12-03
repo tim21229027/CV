@@ -20,10 +20,10 @@ export default {
         <PersonalInfo />
       </section>
 
+      <section><Portfolio /></section>
       <section>
         <Autobiography />
       </section>
-      <section><Portfolio /></section>
     </div>
   </div>
 </template>

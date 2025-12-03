@@ -1,36 +1,52 @@
 <template>
   <div id="Portfolio" class="PortfolioBody">
     <!-- 子子组件的内容 -->
-    <div class="Title">作品集</div>
-    <div class="CardList">
-      <div class="PortfolioCard" v-for="item in PortfolioList" :key="item">
-        <div class="PortfolioPhoto">
-          <img class="PortfolioImg" :src="item.PortfolioPhoto" />
+    <div v-if="tab == 0">
+      <div class="Title">作品集</div>
+      <div class="CardList">
+        <div
+          class="PortfolioCard"
+          v-for="item in PortfolioList"
+          :key="item"
+          @click="tabSelect(item.id)"
+        >
+          <div class="PortfolioPhoto">
+            <img class="PortfolioImg" :src="item.PortfolioPhoto" />
+          </div>
+
+          <div class="PortfolioTitle">{{ item.PortfolioTitle }}</div>
+          <div class="PortfolioItemText">負責項目:</div>
+          <div class="PortfolioTag">
+            <el-tag
+              v-for="tags in item.PortfolioTag"
+              :key="tags"
+              class="mx-1"
+              effect="dark"
+              type="info"
+              round
+              >{{ tags }}</el-tag
+            >
+          </div>
+          <div class="PortfolioItemText">開發使用工具:</div>
+          <div class="PortfolioTag">
+            <el-tag
+              v-for="tags in item.PortfolioToolTag"
+              :key="tags"
+              class="mx-1"
+              effect="dark"
+              type="info"
+              round
+              >{{ tags }}</el-tag
+            >
+          </div>
         </div>
-        <div class="PortfolioTitle">{{ item.PortfolioTitle }}</div>
-        <div class="PortfolioItemText">負責項目:</div>
-        <div class="PortfolioTag">
-          <el-tag
-            v-for="tags in item.PortfolioTag"
-            :key="tags"
-            class="mx-1"
-            effect="dark"
-            type="info"
-            round
-            >{{ tags }}</el-tag
-          >
-        </div>
-        <div class="PortfolioItemText">開發使用工具:</div>
-        <div class="PortfolioTag">
-          <el-tag
-            v-for="tags in item.PortfolioToolTag"
-            :key="tags"
-            class="mx-1"
-            effect="dark"
-            type="info"
-            round
-            >{{ tags }}</el-tag
-          >
+      </div>
+    </div>
+
+    <div v-for="item in PortfolioList" :key="item">
+      <div v-if="tab == item.id">
+        <div>
+          <el-button @click="tab = 0">返回</el-button>{{ item.PortfolioTitle }}
         </div>
       </div>
     </div>
@@ -48,6 +64,7 @@ export default {
     return {
       PortfolioList: [
         {
+          id: 1,
           PortfolioPhoto: u1,
           PortfolioTitle: "大學畢業專題-INoteYou",
           PortfolioTag: [
@@ -67,37 +84,48 @@ export default {
           ],
         },
         {
+          id: 2,
           PortfolioPhoto: u5,
-          PortfolioTitle: "大三SA專題-疫調系統",
+          PortfolioTitle: "SA專題-疫調系統",
           PortfolioTag: ["前端設計", "UI/UX設計", "資料庫串接", "系統流程規劃"],
           PortfolioToolTag: ["Vue", "FireBase", "Figma"],
         },
         {
+          id: 3,
           PortfolioPhoto: u2,
-          PortfolioTitle: "大二前端專題-電商",
+          PortfolioTitle: "前端課程專題-電商",
           PortfolioTag: ["前端設計", "UI/UX設計"],
-          PortfolioToolTag: ["Bootstrap"],
+          PortfolioToolTag: ["HTML/CSS", "Bootstrap"],
         },
         {
+          id: 4,
           PortfolioPhoto: u4,
-          PortfolioTitle: "大二多媒體課程-社團",
+          PortfolioTitle: "多媒體課程-社團",
           PortfolioTag: ["前端設計"],
-          PortfolioToolTag: ["Bootstrap"],
+          PortfolioToolTag: ["HTML/CSS"],
         },
         {
+          id: 5,
           PortfolioPhoto: u3,
-          PortfolioTitle: "大二後端專題-電商",
+          PortfolioTitle: "後端專題-電商",
           PortfolioTag: ["資料庫架設", "前後端串接"],
           PortfolioToolTag: ["MySQL", "TomCat"],
         },
         {
+          id: 6,
           PortfolioPhoto: u6,
           PortfolioTitle: "LineBot-聊天機器人",
           PortfolioTag: ["聊天機器人開發", "Line圖文版面設計"],
           PortfolioToolTag: ["LINE Bot Designer", "Django"],
         },
       ],
+      tab: 0,
     };
+  },
+  methods: {
+    tabSelect(value) {
+      this.tab = value;
+    },
   },
 };
 </script>
@@ -147,5 +175,11 @@ export default {
 }
 .PortfolioImg {
   width: 100%;
+}
+.PortfolioCard:hover {
+  box-shadow: gray 0px 0px 5px 7px;
+  position: relative;
+  top: -5px;
+  transition: 0.8s;
 }
 </style>
