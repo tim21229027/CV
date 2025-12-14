@@ -23,12 +23,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
-          cache-dependency-path: personWeb/package-lock.json
+
+      - name: List files
+        run: ls -la && ls -la personWeb
 
       - name: Install
         working-directory: personWeb
-        run: npm ci
+        run: npm install
 
       - name: Build
         working-directory: personWeb
@@ -46,6 +47,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
