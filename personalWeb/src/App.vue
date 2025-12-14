@@ -28,8 +28,8 @@
               style="text-align: center"
               to="#PersonalInfo"
               class="nav-link mainFontColor navFont"
-              >個人資料</router-link
-            >
+              >個人資料
+            </router-link>
           </li>
 
           <li class="nav-item">
